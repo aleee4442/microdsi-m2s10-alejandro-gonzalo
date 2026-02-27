@@ -13,8 +13,7 @@ function getTrackFromURL() {
   return TRACKS.some(x => x.id === t) ? t : null;
 }
 function getTrack() {
-  return getTrackFromURL() || localStorage.getItem("track") || "itsm";
-}
+  return getTrackFromURL() || localStorage.getItem("track") || "itsm";}
 function setTrack(t) {
   localStorage.setItem("track", t);
   // si NO viene por URL, refrescamos para re-render
@@ -158,6 +157,29 @@ const LESSONS = [
       proc: ["Salida: SIPOC alta proveedor + baseline lead time", "Preparar dependencias ERP"],
     },
     check: "Entrega 1: inventario L1 + matriz priorización + SIPOC del ganador (1 página).",
+  },
+  {
+    tag: "M2-S10 · Calidad",
+    title: "FCR: First Contact Resolution",
+    text: "Resolver en el primer contacto reduce costes y mejora satisfacción. El triage es clave para FCR.",
+    examples: {
+      itsm: ["FCR actual: 65%", "Misrouting reduce FCR un 15%", "KB actualizada mejora FCR"],
+      hr:   ["FCR: 70% en consultas simples", "Derivaciones a especialistas", "Tiempo hasta resolución"],
+      proc: ["FCR en alta proveedor: 40%", "Documentación incompleta causa principal", "Validación automática"],
+    },
+    check: "Calcula tu FCR estimado y qué lo afecta.",
+  },
+  // Tarjeta nueva 2
+  {
+    tag: "M2-S10 · SLAs",
+    title: "Acuerdos de Nivel de Servicio",
+    text: "Los SLAs deben ser realistas y medibles. En triage, el tiempo de respuesta es crítico.",
+    examples: {
+      itsm: ["SLA respuesta: 15 min para P1", "SLA resolución: 4h P1", "Penalización por incumplimiento"],
+      hr:   ["SLA: 24h para consultas generales", "48h para nómina", "Excepciones por periodo de cierre"],
+      proc: ["SLA alta proveedor: 5 días", "SLA validación: 2 días", "Tracking de excepciones"],
+    },
+    check: "Define 2 SLAs para tu proceso y cómo medirlos.",
   },
 ];
 
